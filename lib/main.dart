@@ -22,9 +22,26 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        backgroundColor: Color.fromARGB(253, 250, 250, 231),
+        drawer: Drawer(
+          child: Container(
+            color: Color.fromARGB(255, 77, 77, 77),
+          ),
+        ),
+        appBar: AppBar(
+          title: const Text('BiciSmart'),
+        ),
+        body: Center(
+          child: Column(children: [
+            Container(
+              child: Text('BiciSmart'),
+            )
+          ]),
+        ),
+      ),
     );
   }
 }
