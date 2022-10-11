@@ -231,7 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 20.0,
         ),
         Text(
-          'Ingresar con',
+          'Ingresar con un comentario',
           style: kLabelStyle,
         ),
       ],
