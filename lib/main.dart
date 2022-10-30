@@ -1,5 +1,6 @@
 // import 'package:bici_smart/screens/BackWheater.dart';
 import 'package:bici_smart/screens/BackWheater.dart';
+import 'package:bici_smart/screens/Home_page.dart';
 import 'package:flutter/material.dart';
 import 'screens/Header.dart';
 import 'screens/login.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           // primarySwatch: Colors.green,
           ),
-      home: new LoginScreen(),
+      home: new Home_page()
     );
   }
 }
