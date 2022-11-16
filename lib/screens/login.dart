@@ -65,9 +65,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildPasswordTF(),
                       _buildForgotPasswordBtn(),
                       _RememberMeCheckbox(),
-                      _buildLoginBtn(),
+                      _buildLoginBtn(context),
                       _buildSignInWithText(),
-                      _buildSocialBtnRow(),
+                      _buildSocialBtnRow(context),
                       _buildSignupBtn(),
                     ],
                   ),
@@ -193,13 +193,16 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildLoginBtn() {
+  Widget _buildLoginBtn(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
         // elevation: 5.0,
-        onPressed: () => new home_page(),
+        onPressed: () {
+
+          Navigator.push(context,MaterialPageRoute(builder: (context)=> Home_page()));
+        },
         // padding : EdgeInsets.all(15.0),
         // shape: RoundedRectangleBorder(
         //   borderRadius: BorderRadius.circular(30.0),
@@ -263,7 +266,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildSocialBtnRow() {
+  Widget _buildSocialBtnRow(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 30.0),
       child: Row(
@@ -271,16 +274,14 @@ class _LoginScreenState extends State<LoginScreen> {
         children: <Widget>[
           _buildSocialBtn(
             () => print('Login with facebook'),
-            AssetImage(
-              'assets/logos/facebook.jpg',
-            ),
+            AssetImage('assets/'
+                'logo/facebook.jpg'),
           ),
           _buildSocialBtn(
             () => print('Login with Google'),
-            AssetImage(
-              'assets/logos/google.jpg',
+            AssetImage('assets/logo/google.jpg')
+             ,
             ),
-          ),
         ],
       ),
     );
