@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bici_smart/utilities/constants.dart';
 import 'package:bici_smart/screens/BackWheater.dart';
+import 'package:bici_smart/screens/Home_page.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -198,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
       width: double.infinity,
       child: ElevatedButton(
         // elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () => new home_page(),
         // padding : EdgeInsets.all(15.0),
         // shape: RoundedRectangleBorder(
         //   borderRadius: BorderRadius.circular(30.0),
