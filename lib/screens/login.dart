@@ -1,3 +1,6 @@
+
+
+import 'package:bici_smart/screens/Home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bici_smart/utilities/constants.dart';
@@ -56,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 10 ,),
                       _buildEmailTF(),
                       SizedBox(
                         height: 30.0,
@@ -64,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildPasswordTF(),
                       _buildForgotPasswordBtn(),
                       _RememberMeCheckbox(),
-                      _buildLoginBtn(),
+                      _buildLoginBtn(context),
                       _buildSignInWithText(),
                       _buildSocialBtnRow(),
                       _buildSignupBtn(),
@@ -192,22 +195,21 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildLoginBtn() {
+  Widget _buildLoginBtn(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
         // elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
-        // padding : EdgeInsets.all(15.0),
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.circular(30.0),
-        // ),
-        // color: Colors.white,
+        onPressed:(){
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context)=> Home_page())
+          );
+        } ,
         child: Text(
           'INGRESAR',
           style: TextStyle(
-              color: Color(0xFF527DAA),
+              color: Colors.black87,
               letterSpacing: 1.5,
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
@@ -249,9 +251,10 @@ class _LoginScreenState extends State<LoginScreen> {
           color: Colors.black87,
           boxShadow: [
             BoxShadow(
-              color: Colors.black26,
+              color: Colors.black,
               offset: Offset(0, 2),
               blurRadius: 6.0,
+
             ),
           ],
           image: DecorationImage(
@@ -276,9 +279,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           _buildSocialBtn(
             () => print('Login with Google'),
-            AssetImage(
-              'assets/logos/google.jpg',
-            ),
+            AssetImage("assets/logos/google.jpg")
           ),
         ],
       ),
