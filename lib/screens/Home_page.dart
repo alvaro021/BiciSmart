@@ -125,12 +125,12 @@ class Home_page extends StatelessWidget {
             ),
             body: Center(
                 child: Container(
-                    child:Column(
+                    child:ListView(
                       children:[
                         Container(
                           width: 300,
                           height: 50,
-                          margin: EdgeInsets.only(top: 20,bottom: 30),
+                          margin: EdgeInsets.only(top: 20,bottom: 30, left: 10 , right: 10),
                           color: Color.fromRGBO(152, 251, 152,0.3) ,
                           child: TextField(
                             cursorColor: Colors.black,
@@ -151,8 +151,8 @@ class Home_page extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 350,
-                          color: Colors.black,
+                          padding: EdgeInsets.all(10),
+
                           child: Image.network("https://cdn.discordapp.com/attachments/977421327491285036/1042482284462346272/image.png"),
                         ),
                       ],

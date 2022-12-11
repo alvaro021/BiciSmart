@@ -274,12 +274,12 @@ class _LoginScreenState extends State<LoginScreen> {
           _buildSocialBtn(
             () => print('Login with facebook'),
             AssetImage(
-              'assets/logos/facebook.jpg',
+              'assets/logos/facebook.png',
             ),
           ),
           _buildSocialBtn(
             () => print('Login with Google'),
-            AssetImage("assets/logos/google.jpg")
+            AssetImage("assets/logos/google.png")
           ),
         ],
       ),
@@ -290,7 +290,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: () => print('Sign Up Button Pressed'),
       child: RichText(
-        text: TextSpan(
+        text: const TextSpan(
           children: [
             TextSpan(
               text: 'Don\'t have an Account? ',
