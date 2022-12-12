@@ -1,3 +1,4 @@
+
 import 'package:bici_smart/screens/login.dart';
 import 'package:bici_smart/utilities/constants.dart';
 import 'package:flutter/material.dart';
@@ -142,7 +143,8 @@ class Account_page extends StatelessWidget {
                 height: 140,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100.0),
-                  child: FadeInImage.assetNetwork(placeholder: "user", image: "asserts/logo/user.png"),
+                  child: Image.asset("assets/logos/user.png"),
+
                 ),
               ),
               Container(

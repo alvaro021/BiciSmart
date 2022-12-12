@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:bici_smart/screens/account_page.dart';
 import 'package:bici_smart/screens/login.dart';
 import 'package:flutter/material.dart';
@@ -9,110 +11,61 @@ class Home_page extends StatelessWidget {
           title: 'homme page',
           home: Scaffold(
             drawer: Drawer(
-              backgroundColor:Color.fromRGBO(218, 238, 235, 1),
+              backgroundColor:Color.fromRGBO(175, 206, 185, 1.0),
               child: Container(
                 child: Column(
                   children: [
-
+                    UserAccountsDrawerHeader(
+                      decoration: BoxDecoration(color: Color.fromRGBO(
+                          145, 166, 153, 1.0)),
+                      accountName: Text("Benito Musilini"),
+                      accountEmail:Text("benito@gmail.com"),
+                      currentAccountPicture: CircleAvatar(
+                      backgroundImage: AssetImage("assets/logos/user.png"),
+                    ))
+                   ,
+                    ListTile(
+                      textColor: Colors.white,
+                      title: Text("Home",style: TextStyle(fontSize: 17),) ,
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Home_page()));
+                      },
+                    ),
+                    Divider(color: Colors.white,),
+                    ListTile(
+                      textColor: Colors.white,
+                      title: Text("Perfil",style: TextStyle(fontSize: 17),) ,
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Account_page()));
+                      },
+                    ),
+                    Divider(color: Colors.white,),
+                    ListTile(
+                      textColor: Colors.white,
+                      title: Text("Rutas",style: TextStyle(fontSize: 17),) ,
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Home_page()));
+                      },
+                    ),
+                    Divider(color: Colors.white,),
+                    ListTile(
+                      textColor: Colors.white,
+                      title: Text("Rutas programadas",style: TextStyle(fontSize: 17),) ,
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Home_page()));
+                      },
+                    ),
+                    Divider(color: Colors.white,),
                     Container(
-                      width: 125,
-                      height: 125,
-                      margin: const EdgeInsets.only(top: 50,bottom: 20),
-
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100.0),
-                        child: Image.network("https://www.labsaenzrenauld.com/wp-content/uploads/2020/10/Perfil-hombre-ba%CC%81sico_738242395.jpg"),
+                      child: ListTile(
+                        textColor: Colors.white,
+                        title: Text("Cerrar secion",style: TextStyle(fontSize: 17),) ,
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+                        },
                       ),
                     ),
-                    Text("Benito Mussolini", style: TextStyle(fontSize: 25,fontWeight:FontWeight.bold)),
-                    Container(
-                        margin:  const EdgeInsets.only(top: 40),
-                        padding: const EdgeInsets.all(15),
-                        color: Color.fromRGBO(152, 251, 152,0.3) ,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed:(){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=> Home_page())
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Color.fromRGBO(152, 251, 152,0) ),
-                          child: Text("Home",style: TextStyle(fontSize: 15),) ,
-                        )
-                    ),
-                    Container(
-                        margin:  const EdgeInsets.only(top: 5),
-                        padding: const EdgeInsets.all(15),
-                        color: Color.fromRGBO(152, 251, 152,0.3) ,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed:(){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=> Account_page())
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Color.fromRGBO(152, 251, 152,0) ),
-                          child: Text("Perfil",style: TextStyle(fontSize: 15),) ,
-                        )
-                    ),
-                    Container(
-
-                        margin:  const EdgeInsets.only(top: 5),
-                        padding: const EdgeInsets.all(15),
-                        color: Color.fromRGBO(152, 251, 152,0.3) ,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                        onPressed:(){
-                        Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=> Home_page())
-                        );
-                        },
-                          style: TextButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Color.fromRGBO(152, 251, 152,0) ),
-                          child: Text("Rutas",style: TextStyle(fontSize: 15),) ,
-                        )
-                    ),
-                    Container(
-                        margin:  const EdgeInsets.only(top: 5),
-                        padding: const EdgeInsets.all(15),
-                        color: Color.fromRGBO(152, 251, 152,0.3) ,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed:(){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=> Account_page())
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Color.fromRGBO(152, 251, 152,0) ),
-                          child: Text("Rutas programadas",style: TextStyle(fontSize: 15),) ,
-                        )
-                    ),
-                    Expanded(child: Container(),),
-                    Container(
-                        margin:  const EdgeInsets.only(top: 5),
-                        padding: const EdgeInsets.all(25),
-                        color: Color.fromRGBO(152, 251, 152,0.3) ,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed:(){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=> LoginScreen())
-                            );
-                          },
-                           style: TextButton.styleFrom(
-                            primary: Colors.white,
-                            backgroundColor: Color.fromRGBO(152, 251, 152,0) ),
-                          child: Text("cerrar secion",style: TextStyle(fontSize: 15),) ,
-                        )
-
-                    ),
+                    Divider(color: Colors.white,),
                   ],
                 ),
               ),
@@ -131,7 +84,7 @@ class Home_page extends StatelessWidget {
                           width: 300,
                           height: 50,
                           margin: EdgeInsets.only(top: 20,bottom: 30, left: 10 , right: 10),
-                          color: Color.fromRGBO(152, 251, 152,0.3) ,
+                          color: Color.fromRGBO(116, 188, 111,0.4) ,
                           child: TextField(
                             cursorColor: Colors.black,
                             keyboardType: TextInputType.emailAddress,
