@@ -120,14 +120,23 @@ class Account_page extends StatelessWidget {
                 child: Text("total recorrido 23.5", style: TextStyle(fontSize: 15,fontWeight:FontWeight.bold)),
               ),
               Container(
-                color: Colors.grey,
+                color: Color.fromRGBO(152, 251, 152,0),
                 width: 500,
-                height: 400,
+                height: 40,
                 margin: EdgeInsets.only(top: 20),
                 padding: EdgeInsets.only(top:10 , bottom: 400 , right: 100 , left: 100),
                 child: Text("total recorrido 23.5", style: TextStyle(fontSize: 15,fontWeight:FontWeight.bold)),
               ),
+              Container(
+                  color: Color.fromRGBO(152, 251, 152,0),
+                  width: 500,
+                  height: 400,
+                  margin: EdgeInsets.only(top: 30),
+                  alignment: Alignment.center,
+                  child: Text("Logros", style: TextStyle(fontSize: 50,fontWeight:FontWeight.bold)
+                        ),
 
+                  ) ,
             ]
           ),
 

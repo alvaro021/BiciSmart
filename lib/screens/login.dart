@@ -1,6 +1,5 @@
-
-
 import 'package:bici_smart/screens/Home_page.dart';
+import 'package:bici_smart/screens/Sign_Up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bici_smart/utilities/constants.dart';
@@ -59,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10 ,),
+                      SizedBox(height: 10,),
                       _buildEmailTF(),
                       SizedBox(
                         height: 30.0,
@@ -67,10 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildPasswordTF(),
                       _buildForgotPasswordBtn(),
                       _RememberMeCheckbox(),
-                      _buildLoginBtn(context),
+                      _buildLoginBtn(context, 'Ingresar'),
                       _buildSignInWithText(),
                       _buildSocialBtnRow(),
-                      _buildSignupBtn(),
+                      _buildSignupBtn(context),
                     ],
                   ),
                 ),
@@ -195,19 +194,19 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildLoginBtn(BuildContext context) {
+  Widget _buildLoginBtn(BuildContext context, text) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
         // elevation: 5.0,
-        onPressed:(){
+        onPressed: () {
           Navigator.push(context,
-          MaterialPageRoute(builder: (context)=> Home_page())
+              MaterialPageRoute(builder: (context) => Home_page())
           );
-        } ,
+        },
         child: Text(
-          'INGRESAR',
+          text,
           style: TextStyle(
               color: Colors.black87,
               letterSpacing: 1.5,
@@ -272,44 +271,54 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           _buildSocialBtn(
-            () => print('Login with facebook'),
+                () => print('Login with facebook'),
             AssetImage(
               'assets/logos/facebook.png',
             ),
           ),
           _buildSocialBtn(
-            () => print('Login with Google'),
-            AssetImage("assets/logos/google.png")
+                  () => print('Login with Google'),
+              AssetImage("assets/logos/google.png")
           ),
         ],
       ),
     );
   }
 
-  Widget _buildSignupBtn() {
-    return GestureDetector(
-      onTap: () => print('Sign Up Button Pressed'),
-      child: RichText(
-        text: const TextSpan(
-          children: [
-            TextSpan(
-              text: 'Don\'t have an Account? ',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 18.0,
-                fontWeight: FontWeight.w400,
+  Widget _buildSignupBtn(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 25.0),
+      width: double.infinity,
+        child: ElevatedButton(
+
+          onPressed: () {
+                Navigator.push(
+                  context,
+                MaterialPageRoute(builder: (context) => Sign_Up()),
+            );
+          },
+          child: RichText(
+            text: const TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Sign Up ',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Don\'t have an Account? ',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                ],
               ),
-            ),
-            TextSpan(
-              text: 'Sign Up ',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+          ),
       ),
     );
   }
