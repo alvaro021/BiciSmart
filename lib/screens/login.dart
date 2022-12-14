@@ -203,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // elevation: 5.0,
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => fullScreenMap())
+              MaterialPageRoute(builder: (context) => Home_page())
           );
         },
         child: Text(
