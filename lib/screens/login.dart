@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bici_smart/utilities/constants.dart';
 import 'package:bici_smart/screens/BackWheater.dart';
+import 'package:bici_smart/screens/fullScreenMap.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
