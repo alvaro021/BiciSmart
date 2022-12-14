@@ -112,17 +112,30 @@ class Lista_Rutas extends StatelessWidget {
                           Text("nombre ruta",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                           Text("esta es la descripcion de la ruta que te dices que es una ruta bonita etc.."),
                           Container(
+                            alignment: Alignment.centerLeft,
                             child: ElevatedButton(
                               onPressed:(){
                                 showDialog(context: context,builder: (context)=> AlertDialog(
                                   title: Text("nombre ruta"),
-                                  content: Column(
-                                    children: [
-                                      Image.asset("assets/images/paisaje.jpg"),
-                                      Text("esta es la descripcion de la ruta que te dices que es una ruta bonita etc.."),
-                                    ],
+                                  content: Container(
+                                    height: 250,
+                                    child:Column(
+                                      children: [
+                                        Image.asset("assets/images/paisaje.jpg"),
+                                        Text("esta es la descripcion de la ruta que te dices que es una ruta bonita etc.."),
+                                        Container(
+                                          alignment: Alignment.centerLeft,
+                                          padding: EdgeInsets.only(top: 5),
+                                          child: Text("Duracion pormedio   : 23 min"),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text("largo del recorrido : 2.5 KM"),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                  actions: [
+                                    actions: [
                                     ElevatedButton(
                                       onPressed:(){
                                       },
@@ -134,7 +147,7 @@ class Lista_Rutas extends StatelessWidget {
                                         Navigator.of(context).pop("");
                                       },
                                       style: TextButton.styleFrom(backgroundColor: Colors.pink),
-                                      child: Text("cancelar"),
+                                      child: Text("cancelar") ,
                                     ) ,
                                   ],
                                   ),
