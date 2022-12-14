@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bici_smart/utilities/constants.dart';
 import 'package:bici_smart/screens/BackWheater.dart';
+import 'package:bici_smart/screens/fullScreenMap.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -202,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // elevation: 5.0,
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Home_page())
+              MaterialPageRoute(builder: (context) => fullScreenMap())
           );
         },
         child: Text(

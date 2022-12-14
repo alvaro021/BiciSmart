@@ -5,6 +5,7 @@ import 'package:bici_smart/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:bici_smart/screens/Rutas_page.dart';
 import 'package:bici_smart/screens/Rutas_programas.dart';
+import 'package:bici_smart/screens/fullScreenMap.dart';
 
 class Home_page extends StatelessWidget {
   @override
@@ -112,8 +113,9 @@ class Home_page extends StatelessWidget {
                         ),
                         Container(
                           padding: EdgeInsets.all(10),
-
-                          child: Image.network("https://cdn.discordapp.com/attachments/977421327491285036/1042482284462346272/image.png"),
+                          width: 500,
+                          height: 500,
+                          child:  fullScreenMap(),
                         ),
                       ],
                     )
